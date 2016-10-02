@@ -14,10 +14,6 @@ app.get('/demon',function(req,res){
     
 });
 
-app.get('/demon',function(req,res){
-    res.send('this is demon');
-});
-
 app.get('/maverick',function(req,res){
     res.send('this is maverick');
 });
