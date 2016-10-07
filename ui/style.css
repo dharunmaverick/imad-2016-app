@@ -22,6 +22,10 @@ body {
     font-family:times new roman;
     
 }
+.head
+{
+    color:black;
+}
 
 .img-medium {
     height: 200px;
