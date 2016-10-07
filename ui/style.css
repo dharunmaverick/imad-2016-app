@@ -20,8 +20,8 @@ body {
     max-width:800px;
     margin:0 auto;
     font-size: 100%;
-    font-color:red;
-    background-color:blue;
+    color:blue;
+    background-color:grey;
     font-family:times new roman;
     
 }
