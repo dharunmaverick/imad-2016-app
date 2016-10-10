@@ -14,7 +14,7 @@ button.onclick=function(){
     request.send(null);
             };
  
- var sub=document.getElementById('sub');
+ var submit=document.getElementById('sub');
  submit.onclick=function(){
    
   var request=new XMLhttpRequest();
