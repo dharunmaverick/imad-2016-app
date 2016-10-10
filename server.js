@@ -23,7 +23,7 @@ app.get('/sub',function(req,res){
 
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
-    res.send(createTemplate[articleName]));
+    res.send(createTemplate[articleName]);
 });
 
 app.get('/ui/style.css', function (req, res) {
