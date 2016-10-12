@@ -32,7 +32,7 @@ button.onclick=function(){
         }
     };
                 
-                 request.open('GET','http://dharunmaverick.imad.hasura-app.io/subs?name='+name,true);
+                 request.open('GET','http://dharunmaverick.imad.hasura-app.io/subs?='+para,true);
     request.send(null);
             };
   
