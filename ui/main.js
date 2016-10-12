@@ -27,7 +27,7 @@ button.onclick=function(){
                 }
                 
                 var p=document.getElementById('para');
-                document.getElementById("para").innerHTML += '<p>'+text
+                document.getElementById("para").innerHTML += '<p>'
             }
         }
     };
