@@ -23,20 +23,16 @@ button.onclick=function(){
             if(request.status===200){
                 var names=request.responseText;
                 names=JSON.parse(names);
-                var list='';
-                for(var i=0;i<names.length;i++){
-                    list +='<li>'+names[i]+'</li>';
                     
                 }
                 
-                var ul=document.getElementById('namelist');
-                ul.innerHTML=list;
+                var p=document.getElementById('para');
+                p.innerHTML=para;
             }
         }
     };
-                var nameInput=document.getElementById('name');
-                var name=nameInput.value;
-                 request.open('GET','http://dharunmaverick.imad.hasura-app.io/sub?name='+name,true);
+                document.getElementById("para").innerHTML += '<p>'+text
+                 request.open('GET','http://dharunmaverick.imad.hasura-app.io/subs?name='+name,true);
     request.send(null);
             };
   
