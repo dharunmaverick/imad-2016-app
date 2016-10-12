@@ -27,11 +27,11 @@ button.onclick=function(){
                 }
                 
                 var p=document.getElementById('para');
-                p.innerHTML=para;
+                document.getElementById("para").innerHTML += '<p>'+text
             }
         }
     };
-                document.getElementById("para").innerHTML += '<p>'+text
+                
                  request.open('GET','http://dharunmaverick.imad.hasura-app.io/subs?name='+name,true);
     request.send(null);
             };
