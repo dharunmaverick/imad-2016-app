@@ -14,25 +14,29 @@ button.onclick=function(){
     request.send(null);
             };
  
- var submit=document.getElementById('subs');
+ var submit=document.getElementById('sub');
  submit.onclick=function(){
    
   var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.status===200){
-                var para=request.responseText;
-                para=JSON.parse(para);
+                var names=request.responseText;
+                names=JSON.parse(names);
+                var list='';
+                for(var i=0;i<names.length;i++){
+                    list +='<li>'+names[i]+'</li>';
                     
                 }
                 
-                var p=document.getElementById('para');
-                document.getElementById("para").innerHTML += '<p>'
+                var ul=document.getElementById('namelist');
+                ul.innerHTML=list;
             }
         }
     };
-                
-                 request.open('GET','http://dharunmaverick.imad.hasura-app.io/subs?='+para,true);
+                var nameInput=document.getElementById('name');
+                var name=nameInput.value;
+                 request.open('GET','http://dharunmaverick.imad.hasura-app.io/sub?name='+name,true);
     request.send(null);
             };
   
