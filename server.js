@@ -15,9 +15,9 @@ app.get('/count',function(req,res){
 });
 
 var names=[];
-app.get('/subs',function(req,res){
-    var para=req.query.para;
-    names.push(para);
+app.get('/sub',function(req,res){
+    var name=req.query.name;
+    names.push(name);
     res.send(JSON.stringify(names));
 });
 
