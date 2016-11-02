@@ -1,4 +1,4 @@
-function comment_template(id)//returns a js code unique for each page
+function comment_template(comments)//returns a js code unique for each page
 {   
   var js_data=`
     //get the submit element on this page by referencing it with given item_id
@@ -40,11 +40,11 @@ function comment_template(id)//returns a js code unique for each page
         }
       };
       //making request
-      input=document.getElementById('in_id_${id}');
+      input=document.getElementById('in_id_${comments}');
       data=input.value;
       //sending request to page with id=current_id
-      request.open('GET','http://localhost:8080/ui/${id}/comments?comment='+data,true);
-      //request.open('GET','http://ceidloc.imad.hasura-app.io/ui/${id}/comments?comment='+data,true);
+      request.open('GET','http://localhost:8080/ui/${comments}/comments?comment='+data,true);
+      //request.open('GET','http://ceidloc.imad.hasura-app.io/ui/${comments}/comments?comment='+data,true);
       request.send(null);
     };
     `
