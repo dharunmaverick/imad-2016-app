@@ -1,25 +1,44 @@
 var express = require('express');
-var stormpath = require('express-stormpath');
- 
+var morgan = require('morgan');
+var path = require('path');
+
 var app = express();
- 
-app.set('views', './views');
-app.set('view engine', 'jade');
- 
-app.use(stormpath.init(app, {
-  expand: {
-    customData: true
-  }
-}));
- 
-app.get('/', stormpath.getUser, function(req, res) {
-  res.render('home', {
-    title: 'Welcome'
-  });
+app.use(morgan('combined'));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
- 
-app.on('stormpath.ready',function(){
-  console.log('Stormpath Ready');
+var count=0;
+app.get('/count',function(req,res){
+    count=count+1;
+   res.send(count.toString());
 });
- 
-app.listen(8080);
+
+var names=[];
+app.get('/sub',function(req,res){
+    var name=req.query.name;
+    names.push(name);
+    res.send(JSON.stringify(names));
+});
+
+app.get('/:articleName',function(req,res){
+    var articleName=req.params.articleName;
+    res.send(createTemplate[articleName]);
+});
+
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
+
+app.get('/ui/madi.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
+
+var port = 8080; // Use 8080 for local development because you might already have apache running on 80
+app.listen(8080, function () {
+  console.log(`IMAD course app listening on port ${port}!`);
+});
