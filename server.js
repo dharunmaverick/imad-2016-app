@@ -14,11 +14,18 @@ app.get('/count',function(req,res){
    res.send(count.toString());
 });
 
+
 var names=[];
 app.get('/sub',function(req,res){
     var name=req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
+});
+
+app.get('/subs',function(req,res){
+    var comment=req.params.comment;
+    res.send(createTemplate[comment]);
+    
 });
 
 app.get('/:articleName',function(req,res){
