@@ -23,8 +23,7 @@ app.get('/sub',function(req,res){
 });
 
 app.get('/subs',function(req,res){
-    var comment=req.params.comment;
-    res.send(createTemplate[comment]);
+    res.send(comment);
     
 });
 
