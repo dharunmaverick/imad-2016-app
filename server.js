@@ -22,7 +22,7 @@ app.get('/sub',function(req,res){
     res.send(JSON.stringify(names));
 });
 
-app.get('/subcmt',function(req,res){
+app.get('/subs',function(req,res){
     var comment=req.params.comment;
     res.send(createTemplate[comment]);
     
